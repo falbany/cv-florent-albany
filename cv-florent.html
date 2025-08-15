@@ -3,228 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Florent ALBANY</title>
-    <!-- Utilisation de la police Inter pour un design moderne -->
+    <title>CV de Florent ALBANY</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Chargement de Tailwind CSS via le CDN pour un style rapide et professionnel -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
-        }
-        .card {
-            box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.15);
-            border-radius: 2rem;
-            border: 1px solid #e5e7eb;
-        }
-        .profile-img {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .profile-img:hover {
-            transform: scale(1.07) rotate(-2deg);
-            box-shadow: 0 4px 24px 0 rgba(59, 130, 246, 0.25);
-        }
-        .section-title {
-            transition: color 0.2s;
-        }
-        .section-title:hover {
-            color: #2563eb;
-        }
-        .link-modern {
-            transition: color 0.2s, text-decoration 0.2s;
-        }
-        .link-modern:hover {
-            color: #2563eb;
-            text-decoration: underline wavy;
-        }
-    </style>
 </head>
-<body class="p-4 md:p-8 text-sm">
-    <div class="card max-w-4xl mx-auto bg-white p-6 md:p-8">
-        <!-- Section d'en-tête (Header) -->
-        <header class="flex flex-col md:flex-row items-center justify-center text-center pb-2 border-b-2 border-blue-200 mb-4">
-            <img src="./img/Photo Profil.jpeg" alt="Photo de profil Florent Albany" class="profile-img w-28 h-28 rounded-full object-cover mb-2 md:mb-0 md:mr-6 border-4 border-blue-200 shadow-lg">
-            <div>
-                <h1 class="text-2xl font-extrabold text-blue-700 mb-1 tracking-tight">Florent ALBANY</h1>
-                <h2 class="text-base font-semibold text-gray-600">Ingénieur - Chercheur en électronique : Caractérisation et Fiabilité</h2>
-            </div>
+<body>
+    <div class="container">
+        <header>
+            <h1>Florent ALBANY</h1>
+            <h2>Ingénieur Test Électronique Numérique</h2>
         </header>
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-            <!-- Colonne de gauche -->
-            <div class="md:col-span-3 space-y-6">
-                <section>
-                    <h3 class="section-title text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Résumé Professionnel</h3>
-                    <p class="mt-2 text-gray-700 leading-relaxed text-justify">
-                        Docteur de l'Université de Bordeaux et ingénieur en électronique, je possède une expertise approfondie dans la <span class="font-semibold text-blue-700">caractérisation de transistors en régime statique et RF</span>, ainsi qu'une solide connaissance des technologies avancées de semi-conducteurs (HEMTs GaN, HBT SiGe, MOSFET Si). Ma double compétence en recherche et en ingénierie me permet de relever des défis techniques complexes. Je maîtrise la programmation <span class="font-semibold text-blue-700">Python</span> pour l'automatisation de mesures et la modélisation. Mes expériences en <span class="font-semibold text-blue-700">gestion de projet</span> et en <span class="font-semibold text-blue-700">résolution de problèmes</span> ont été mises à l'épreuve dans des environnements exigeants.
-                    </p>
-                </section>
-                <section>
-                    <h3 class="section-title text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Expériences Professionnelles</h3>
-                    <div class="mt-2 space-y-3">
-                        <!-- Emploi 1 -->
-                        <div class="flex flex-col md:flex-row justify-between items-start">
-                            <div>
-                                <h4 class="text-base font-semibold text-gray-800">Ingénieur Test Électronique Numérique</h4>
-                                <p class="text-gray-500 text-sm">SERMA Technologies</p>
-                            </div>
-                            <p class="text-gray-500 md:text-right text-sm">Mai 2024 - Aujourd'hui (1 an 4 mois)</p>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600 ml-4 text-sm">
-                            <li>Programmation de l'automate programmable industriel et de testeurs numériques (ATE).</li>
-                        </ul>
 
-                        <!-- Emploi 2 -->
-                        <div class="flex flex-col md:flex-row justify-between items-start">
-                            <div>
-                                <h4 class="text-base font-semibold text-gray-800">Ingénieur modélisation</h4>
-                                <p class="text-gray-500 text-sm">SERMA Technologies</p>
-                            </div>
-                            <p class="text-gray-500 md:text-right text-sm">Sept. 2022 - Juin 2025 (2 ans 10 mois)</p>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600 ml-4 text-sm">
-                            <li>Ingénieur en modélisation de transistors.</li>
-                            <li>Compétences : ICCAP, caractérisation.</li>
-                        </ul>
-                        
-                        <!-- Emploi 3 -->
-                        <div class="flex flex-col md:flex-row justify-between items-start">
-                            <div>
-                                <h4 class="text-base font-semibold text-gray-800">Chercheur postdoctoral</h4>
-                                <p class="text-gray-500 text-sm">IMS Laboratory</p>
-                            </div>
-                            <p class="text-gray-500 md:text-right text-sm">Mars 2022 - Sept. 2022 (7 mois)</p>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600 ml-4 text-sm">
-                            <li>Évaluation de l'influence de la puissance RF sur la linéarité de transistor bipolaire HBT SiGe.</li>
-                        </ul>
+        <section class="contact-info">
+            <h3>Coordonnées</h3>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:florent441@gmail.com">florent441@gmail.com</a></li>
+                <li><strong>Téléphone:</strong> <a href="tel:+33672488819">+33 6 72 48 88 19</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/falbany" target="_blank">linkedin.com/in/falbany</a></li>
+            </ul>
+        </section>
 
-                        <!-- Emploi 4 -->
-                        <div class="flex flex-col md:flex-row justify-between items-start">
-                            <div>
-                                <h4 class="text-base font-semibold text-gray-800">Doctorat</h4>
-                                <p class="text-gray-500 text-sm">IMS Laboratory</p>
-                            </div>
-                            <p class="text-gray-500 md:text-right text-sm">Déc. 2017 - Déc. 2021 (4 ans 1 mois)</p>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600 ml-4 text-sm">
-                            <li>Sujet : Évaluation de la robustesse de transistors R&D normally-off GaN HEMTs.</li>
-                        </ul>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="section-title text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Formation</h3>
-                    <div class="mt-2 space-y-1">
-                        <div class="flex justify-between items-baseline">
-                            <div>
-                                <h4 class="text-base font-semibold text-gray-800">Docteur de l’université de Bordeaux</h4>
-                                <p class="text-gray-500 text-sm">Spécialité Électronique</p>
-                            </div>
-                            <p class="text-gray-500 text-sm">2021</p>
-                        </div>
-                        <div class="flex justify-between items-baseline">
-                            <div>
-                                <h4 class="text-base font-semibold text-gray-800">Master 2, Ingénierie des systèmes complexes Électroniques</h4>
-                                <p class="text-gray-500 text-sm">Université de Bordeaux</p>
-                            </div>
-                            <p class="text-gray-500 text-sm">2017</p>
-                        </div>
-                        <div class="flex justify-between items-baseline">
-                            <div>
-                                <h4 class="text-base font-semibold text-gray-800">Licence EEA, Électronique, Électrotechnique, Automatique</h4>
-                                <p class="text-gray-500 text-sm">Université de Bordeaux</p>
-                            </div>
-                            <p class="text-gray-500 text-sm">2015</p>
-                        </div>
-                    </div>
-                </section>
+        <section>
+            <h3>À propos</h3>
+            <p>Passionné par les nouvelles technologies | Expert en test de produits numériques. Curieux et avide d'apprendre, je suis toujours à la recherche de défis stimulants dans le domaine de la qualification et du test électronique.</p>
+        </section>
+
+        <section>
+            <h3>Expériences Professionnelles</h3>
+            <div class="job">
+                <h4>Ingénieur Test Électronique Numérique</h4>
+                <p><strong>SERMA Technologies</strong> | Pessac, Nouvelle-Aquitaine, France</p>
+                <p class="date">mai 2024 – présent</p>
             </div>
-            <!-- Colonne de droite -->
-            <div class="md:col-span-2 space-y-6">
-                <section>
-                    <h3 class="section-title text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Coordonnées</h3>
-                    <ul class="mt-2 space-y-1 text-gray-700 text-sm">
-                        <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                            </svg>
-                            <span>06 72 48 88 19</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                            </svg>
-                            <span>florent441@gmail.com</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>3 Allée Haroun Tazieff, 33600 Pessac</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M16 8a6 6 0 01-12 0v-2a2 2 0 012-2h4a2 2 0 012 2v2a6 6 0 01-12 0v-2a2 2 0 012-2h4a2 2 0 012 2v2a6 6 0 01-12 0z" />
-                            </svg>
-                            <a href="https://www.linkedin.com/in/falbany" target="_blank" class="link-modern text-blue-600">www.linkedin.com/in/falbany</a>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h3 class="section-title text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Compétences</h3>
-                    <div class="mt-2 space-y-2">
-                        <div>
-                            <h4 class="font-semibold text-gray-700">Électronique</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
-                                <li>Caractérisation de transistors (statique, RF, pulsé)</li>
-                                <li>Technologies HEMTs GaN, HBT SiGe, MOSFET Si</li>
-                                <li>Programmation de l’automate programmable industriel</li>
-                                <li>Électronique Numérique, Qualification Électronique</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700">Programmation</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
-                                <li>Python, C, C++, VHDL, VBA</li>
-                                <li>Git, GitLab</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700">Conception</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
-                                <li>Conception de systèmes électroniques</li>
-                                <li>Conception de cartes électroniques</li>
-                                <li>Schémas électriques, Altium Designer, KiCad</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700">Simulation</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
-                                <li>CADENCE, ADS, Proteus, Xilinx, Scilab</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700">Autres Compétences</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
-                                <li>Gestion de projet</li>
-                                <li>Résolution de problèmes et de difficultés</li>
-                                <li>Discussions techniques</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="section-title text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Langues</h3>
-                    <ul class="mt-2 space-y-1 text-gray-700 text-sm">
-                        <li>Français : Langue maternelle</li>
-                        <li>Anglais : Professionnel</li>
-                    </ul>
-                </section>
+            <div class="job">
+                <h4>Ingénieur modélisation</h4>
+                <p><strong>SERMA Technologies</strong></p>
+                <p class="date">sept. 2022 – juin 2025</p>
             </div>
-        </div>
+            <div class="job">
+                <h4>Chercheur postdoctoral</h4>
+                <p><strong>IMS Laboratory – Université de Bordeaux</strong></p>
+                <p class="date">janv. 2022 – sept. 2022</p>
+            </div>
+            <div class="job">
+                <h4>Doctorant</h4>
+                <p><strong>IMS Laboratory – Université de Bordeaux</strong></p>
+                <p class="date">déc. 2017 – déc. 2021</p>
+            </div>
+            <div class="job">
+                <h4>Stage de fin d’études</h4>
+                <p><strong>CEA Tech – Grenoble</strong></p>
+                <p class="date">mars 2017 – sept. 2017</p>
+                <ul>
+                    <li>Conception de pixels pour imageurs CMOS haute performance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h3>Compétences</h3>
+            <ul class="skills-list">
+                <li>Discussions techniques</li>
+                <li>Résolution de problèmes</li>
+                <li>Caractérisation de transistors</li>
+                <li>Technologies HEMT GaN, HBT SiGe, MOSFET Si</li>
+                <li>Testeurs numériques (ATE)</li>
+                <li>Automatisation de bancs de test</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>VBA</li>
+                <li>IC-CAP</li>
+                <li>Altium Designer</li>
+                <li>KiCad</li>
+                <li>CADENCE</li>
+                <li>ADS</li>
+                <li>Proteus</li>
+                <li>Xilinx</li>
+                <li>Scilab</li>
+                <li>Gestion de projet</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Publications</h3>
+            <ul class="publications-list">
+                <li>Évaluation de la robustesse d'une technologie HEMT GaN normally-off à implantation d’ions fluorures co-intégrée avec une technologie HEMT GaN normally-on</li>
+                <li>Co-integration of Enhancement and Depletion Modes of GaN-based Transistors for Next Generation RF Communication Circuits</li>
+                <li><a href="https://www.researchgate.net/publication/355276595_Stability_of_the_threshold_voltage_in_fluorine-implanted_normally-off_AlNGaN_HEMTs_co-integrated_with_commercial_normally-on_GaN_HEMT_technology" target="_blank">Stability of the threshold voltage in fluorine-implanted normally-off AlN/GaN HEMTs co-integrated with commercial normally-on GaN HEMT technology</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Formation</h3>
+            <div class="education-item">
+                <h4>Doctorat en électronique</h4>
+                <p>Université de Bordeaux</p>
+                <p class="date">2017–2021</p>
+            </div>
+            <div class="education-item">
+                <h4>Master 2, Ingénierie électrique, électronique et communications</h4>
+                <p>Université de Bordeaux</p>
+                <p class="date">2016–2017</p>
+            </div>
+            <div class="education-item">
+                <h4>Master 1, Ingénierie électrique, électronique et communications</h4>
+                <p>Université de Bordeaux</p>
+                <p class="date">2015–2016</p>
+            </div>
+            <div class="education-item">
+                <h4>Licence EEA, électronique, électrotechnique, automatique</h4>
+                <p>Université de Bordeaux</p>
+                <p class="date">2012–2015</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Langues</h3>
+            <ul>
+                <li>Français : langue maternelle</li>
+                <li>Anglais : professionnel</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Florent ALBANY</p>
+        </footer>
     </div>
 </body>
 </html>
