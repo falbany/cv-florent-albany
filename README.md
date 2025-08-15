@@ -1,18 +1,18 @@
 # CV de Florent ALBANY
 
+![Website](https://img.shields.io/website?url=https%3A%2F%2Ffalbany.github.io%2Fcv-florent-albany%2Fcv-florent.html)
+![GitHub last commit](https://img.shields.io/github/last-commit/falbany/cv-florent-albany)
+
 Ce projet est le CV de Florent ALBANY, conçu pour être hébergé sur GitHub Pages.
 
 ## Comment consulter le CV
 
-Le CV est visible en ligne à l'adresse suivante : [https://<your-github-username>.github.io/CV-Florent-Albany/cv-florent.html](https://<your-github-username>.github.io/CV-Florent-Albany/cv-florent.html)
-
-Remplacez `<your-github-username>` par votre nom d'utilisateur GitHub.
+Le CV est visible en ligne à l'adresse suivante : [https://falbany.github.io/cv-florent-albany/cv-florent.html](https://falbany.github.io/cv-florent-albany/cv-florent.html)
 
 ## Technologies utilisées
 
 *   HTML5
 *   CSS3
-*   Tailwind CSS (via CDN for the old version, now a custom CSS file)
 
 ## Objectif
 
