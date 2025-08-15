@@ -13,12 +13,12 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+            background: #fff; /* A white background for printing */
         }
         .card {
-            box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.15);
-            border-radius: 2rem;
-            border: 1px solid #e5e7eb;
+            box-shadow: none; /* No shadow for printing */
+            border-radius: 0;
+            border: none;
         }
         .profile-img {
             transition: transform 0.3s, box-shadow 0.3s;
@@ -40,155 +40,164 @@
             color: #2563eb;
             text-decoration: underline wavy;
         }
+        @media print {
+            body {
+                background: #fff;
+            }
+            .card {
+                box-shadow: none;
+                border: none;
+            }
+        }
     </style>
 </head>
-<body class="p-2 sm:p-4 md:p-8 text-xs sm:text-sm">
-    <div class="card max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto bg-white p-2 sm:p-4 md:p-8">
+<body class="p-0 text-xs">
+    <div class="card max-w-4xl mx-auto bg-white p-4">
         <!-- Section d'en-tête (Header) -->
-        <header class="flex flex-col md:flex-row items-center justify-center text-center pb-2 border-b-2 border-blue-200 mb-4">
-            <img src="./img/Photo Profil.jpeg" alt="Photo de profil Florent Albany" class="profile-img w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover mb-2 md:mb-0 md:mr-6 border-4 border-blue-200 shadow-lg">
+        <header class="flex flex-col md:flex-row items-center justify-center text-center pb-2 border-b-2 border-blue-200 mb-2">
+            <img src="./img/Photo Profil.jpeg" alt="Photo de profil Florent Albany" class="profile-img w-20 h-20 rounded-full object-cover mb-2 md:mb-0 md:mr-4 border-4 border-blue-200 shadow-lg">
             <div>
-                <h1 class="text-lg sm:text-xl md:text-2xl font-extrabold text-blue-700 mb-1 tracking-tight">Florent ALBANY</h1>
-                <h2 class="text-xs sm:text-sm md:text-base font-semibold text-gray-600">Ingénieur Test Électronique Numérique</h2>
+                <h1 class="text-xl font-extrabold text-blue-700 mb-0 tracking-tight">Florent ALBANY</h1>
+                <h2 class="text-sm font-semibold text-gray-600">Ingénieur Test Électronique Numérique</h2>
             </div>
         </header>
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-3 sm:gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
             <!-- Colonne de gauche -->
-            <div class="md:col-span-3 space-y-4 sm:space-y-6">
+            <div class="md:col-span-3 space-y-3">
                 <section>
-                    <h3 class="section-title text-base sm:text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Résumé Professionnel</h3>
-                    <p class="mt-2 text-gray-700 leading-relaxed text-justify">
+                    <h3 class="section-title text-base font-bold text-blue-700 pb-1 border-b border-blue-200">Résumé Professionnel</h3>
+                    <p class="mt-1 text-gray-700 leading-tight text-justify">
                         Docteur de l'Université de Bordeaux et ingénieur en électronique, je possède une expertise approfondie dans la <span class="font-semibold text-blue-700">caractérisation de transistors en régime statique et RF</span>, ainsi qu'une solide connaissance des technologies avancées de semi-conducteurs (HEMTs GaN, HBT SiGe, MOSFET Si). Ma double compétence en recherche et en ingénierie me permet de relever des défis techniques complexes. Je maîtrise la programmation <span class="font-semibold text-blue-700">Python</span> pour l'automatisation de mesures et la modélisation. Mes expériences en <span class="font-semibold text-blue-700">gestion de projet</span> et en <span class="font-semibold text-blue-700">résolution de problèmes</span> ont été mises à l'épreuve dans des environnements exigeants.
                     </p>
                 </section>
                 <section>
-                    <h3 class="section-title text-base sm:text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Expériences Professionnelles</h3>
-                    <div class="mt-2 space-y-2 sm:space-y-3">
+                    <h3 class="section-title text-base font-bold text-blue-700 pb-1 border-b border-blue-200">Expériences Professionnelles</h3>
+                    <div class="mt-1 space-y-2">
                         <!-- Emploi 1 -->
                         <div class="flex flex-col md:flex-row justify-between items-start">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Ingénieur Test Électronique Numérique</h4>
-                                <p class="text-gray-500 text-sm">SERMA Technologies</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Ingénieur Test Électronique Numérique</h4>
+                                <p class="text-xs text-gray-500">SERMA Technologies</p>
                             </div>
-                            <p class="text-gray-500 md:text-right text-sm">mai 2024 – présent</p>
+                            <p class="text-xs text-gray-500 md:text-right">mai 2024 – présent</p>
                         </div>
                         <!-- Emploi 2 -->
                         <div class="flex flex-col md:flex-row justify-between items-start">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Ingénieur modélisation</h4>
-                                <p class="text-gray-500 text-sm">SERMA Technologies</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Ingénieur modélisation</h4>
+                                <p class="text-xs text-gray-500">SERMA Technologies</p>
                             </div>
-                            <p class="text-gray-500 md:text-right text-sm">sept. 2022 – juin 2025</p>
+                            <p class="text-xs text-gray-500 md:text-right">sept. 2022 – juin 2025</p>
                         </div>
                         <!-- Emploi 3 -->
                         <div class="flex flex-col md:flex-row justify-between items-start">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Chercheur postdoctoral</h4>
-                                <p class="text-gray-500 text-sm">IMS Laboratory – Université de Bordeaux</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Chercheur postdoctoral</h4>
+                                <p class="text-xs text-gray-500">IMS Laboratory – Université de Bordeaux</p>
                             </div>
-                            <p class="text-gray-500 md:text-right text-sm">janv. 2022 – sept. 2022</p>
+                            <p class="text-xs text-gray-500 md:text-right">janv. 2022 – sept. 2022</p>
                         </div>
                         <!-- Emploi 4 -->
                         <div class="flex flex-col md:flex-row justify-between items-start">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Doctorant</h4>
-                                <p class="text-gray-500 text-sm">IMS Laboratory – Université de Bordeaux</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Doctorant</h4>
+                                <p class="text-xs text-gray-500">IMS Laboratory – Université de Bordeaux</p>
                             </div>
-                            <p class="text-gray-500 md:text-right text-sm">déc. 2017 – déc. 2021</p>
+                            <p class="text-xs text-gray-500 md:text-right">déc. 2017 – déc. 2021</p>
                         </div>
                         <!-- Emploi 5 -->
                         <div class="flex flex-col md:flex-row justify-between items-start">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Stage de fin d’études</h4>
-                                <p class="text-gray-500 text-sm">CEA Tech – Grenoble</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Stage de fin d’études</h4>
+                                <p class="text-xs text-gray-500">CEA Tech – Grenoble</p>
                             </div>
-                            <p class="text-gray-500 md:text-right text-sm">mars 2017 – sept. 2017</p>
+                            <p class="text-xs text-gray-500 md:text-right">mars 2017 – sept. 2017</p>
                         </div>
-                         <ul class="list-disc list-inside text-gray-600 ml-4 text-sm">
+                         <ul class="list-disc list-inside text-gray-600 ml-4 text-xs">
                             <li>Conception de pixels pour imageurs CMOS haute performance</li>
                         </ul>
                     </div>
                 </section>
                 <section>
-                    <h3 class="section-title text-base sm:text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Publications</h3>
-                     <ul class="list-disc list-inside text-gray-600 ml-4 text-sm">
+                    <h3 class="section-title text-base font-bold text-blue-700 pb-1 border-b border-blue-200">Publications</h3>
+                     <ul class="list-disc list-inside text-gray-600 ml-4 text-xs leading-tight">
                         <li>Évaluation de la robustesse d'une technologie HEMT GaN normally-off à implantation d’ions fluorures co-intégrée avec une technologie HEMT GaN normally-on</li>
                         <li>Co-integration of Enhancement and Depletion Modes of GaN-based Transistors for Next Generation RF Communication Circuits</li>
                         <li><a href="https://www.researchgate.net/publication/355276595_Stability_of_the_threshold_voltage_in_fluorine-implanted_normally-off_AlNGaN_HEMTs_co-integrated_with_commercial_normally-on_GaN_HEMT_technology" target="_blank" class="link-modern text-blue-600">Stability of the threshold voltage in fluorine-implanted normally-off AlN/GaN HEMTs co-integrated with commercial normally-on GaN HEMT technology</a></li>
                     </ul>
                 </section>
                 <section>
-                    <h3 class="section-title text-base sm:text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Formation</h3>
-                    <div class="mt-2 space-y-1">
+                    <h3 class="section-title text-base font-bold text-blue-700 pb-1 border-b border-blue-200">Formation</h3>
+                    <div class="mt-1 space-y-1">
                         <div class="flex justify-between items-baseline">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Doctorat en électronique</h4>
-                                <p class="text-gray-500 text-sm">Université de Bordeaux</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Doctorat en électronique</h4>
+                                <p class="text-xs text-gray-500">Université de Bordeaux</p>
                             </div>
-                            <p class="text-gray-500 text-sm">2017–2021</p>
+                            <p class="text-xs text-gray-500">2017–2021</p>
                         </div>
                         <div class="flex justify-between items-baseline">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Master 2, Ingénierie électrique, électronique et communications</h4>
-                                <p class="text-gray-500 text-sm">Université de Bordeaux</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Master 2, Ingénierie électrique, électronique et communications</h4>
+                                <p class="text-xs text-gray-500">Université de Bordeaux</p>
                             </div>
-                            <p class="text-gray-500 text-sm">2016–2017</p>
+                            <p class="text-xs text-gray-500">2016–2017</p>
                         </div>
                         <div class="flex justify-between items-baseline">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Master 1, Ingénierie électrique, électronique et communications</h4>
-                                <p class="text-gray-500 text-sm">Université de Bordeaux</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Master 1, Ingénierie électrique, électronique et communications</h4>
+                                <p class="text-xs text-gray-500">Université de Bordeaux</p>
                             </div>
-                            <p class="text-gray-500 text-sm">2015–2016</p>
+                            <p class="text-xs text-gray-500">2015–2016</p>
                         </div>
                         <div class="flex justify-between items-baseline">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-800">Licence EEA, électronique, électrotechnique, automatique</h4>
-                                <p class="text-gray-500 text-sm">Université de Bordeaux</p>
+                                <h4 class="text-sm font-semibold text-gray-800">Licence EEA, électronique, électrotechnique, automatique</h4>
+                                <p class="text-xs text-gray-500">Université de Bordeaux</p>
                             </div>
-                            <p class="text-gray-500 text-sm">2012–2015</p>
+                            <p class="text-xs text-gray-500">2012–2015</p>
                         </div>
                     </div>
                 </section>
             </div>
             <!-- Colonne de droite -->
-            <div class="md:col-span-2 space-y-4 sm:space-y-6">
+            <div class="md:col-span-2 space-y-3">
                 <section>
-                    <h3 class="section-title text-base sm:text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Coordonnées</h3>
-                    <ul class="mt-2 space-y-1 text-gray-700 text-xs sm:text-sm">
+                    <h3 class="section-title text-base font-bold text-blue-700 pb-1 border-b border-blue-200">Coordonnées</h3>
+                    <ul class="mt-1 space-y-1 text-gray-700 text-xs">
                         <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                             </svg>
                             <a href="tel:+33672488819" class="link-modern text-blue-600">06 72 48 88 19</a>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                             </svg>
                             <a href="mailto:florent441@gmail.com" class="link-modern text-blue-600">florent441@gmail.com</a>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                             </svg>
                             <span>3 Allée Haroun Tazieff, 33600 Pessac</span>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M16 8a6 6 0 01-12 0v-2a2 2 0 012-2h4a2 2 0 012 2v2a6 6 0 01-12 0v-2a2 2 0 012-2h4a2 2 0 012 2v2a6 6 0 01-12 0z" />
                             </svg>
-                            <a href="https://www.linkedin.com/in/falbany" target="_blank" class="link-modern text-blue-600">www.linkedin.com/in/falbany</a>
+                            <a href="https://www.linkedin.com/in/falbany" target="_blank" class="link-modern text-blue-600">linkedin.com/in/falbany</a>
                         </li>
                     </ul>
                 </section>
                 <section>
-                    <h3 class="section-title text-base sm:text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Compétences</h3>
-                    <div class="mt-2 space-y-2">
+                    <h3 class="section-title text-base font-bold text-blue-700 pb-1 border-b border-blue-200">Compétences</h3>
+                    <div class="mt-1 space-y-1">
                         <div>
-                            <h4 class="font-semibold text-gray-700">Électronique</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <h4 class="font-semibold text-gray-700 text-sm">Électronique</h4>
+                            <ul class="list-disc list-inside text-gray-600 ml-4 text-xs">
                                 <li>Caractérisation de transistors (statique, RF, pulsé)</li>
                                 <li>Technologies HEMTs GaN, HBT SiGe, MOSFET Si</li>
                                 <li>Programmation de l’automate programmable industriel</li>
@@ -196,29 +205,29 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-700">Programmation</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <h4 class="font-semibold text-gray-700 text-sm">Programmation</h4>
+                            <ul class="list-disc list-inside text-gray-600 ml-4 text-xs">
                                 <li>Python, C, C++, VHDL, VBA</li>
                                 <li>Git, GitLab</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-700">Conception</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <h4 class="font-semibold text-gray-700 text-sm">Conception</h4>
+                            <ul class="list-disc list-inside text-gray-600 ml-4 text-xs">
                                 <li>Conception de systèmes électroniques</li>
                                 <li>Conception de cartes électroniques</li>
                                 <li>Schémas électriques, Altium Designer, KiCad</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-700">Simulation</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <h4 class="font-semibold text-gray-700 text-sm">Simulation</h4>
+                            <ul class="list-disc list-inside text-gray-600 ml-4 text-xs">
                                 <li>CADENCE, ADS, Proteus, Xilinx, Scilab</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-700">Autres Compétences</h4>
-                            <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <h4 class="font-semibold text-gray-700 text-sm">Autres Compétences</h4>
+                            <ul class="list-disc list-inside text-gray-600 ml-4 text-xs">
                                 <li>Gestion de projet</li>
                                 <li>Résolution de problèmes et de difficultés</li>
                                 <li>Discussions techniques</li>
@@ -227,8 +236,8 @@
                     </div>
                 </section>
                 <section>
-                    <h3 class="section-title text-base sm:text-lg font-bold text-blue-700 pb-1 border-b border-blue-200">Langues</h3>
-                    <ul class="mt-2 space-y-1 text-gray-700 text-xs sm:text-sm">
+                    <h3 class="section-title text-base font-bold text-blue-700 pb-1 border-b border-blue-200">Langues</h3>
+                    <ul class="mt-1 space-y-1 text-gray-700 text-xs">
                         <li>Français : Langue maternelle</li>
                         <li>Anglais : Professionnel</li>
                     </ul>
