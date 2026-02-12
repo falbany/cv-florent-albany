@@ -1,44 +1,46 @@
-# CV de Florent ALBANY
+# CV de Florent ALBANY - Dual CV Architecture
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Ffalbany.github.io%2Fcv-florent-albany%2Fcv-florent.html)
 ![GitHub last commit](https://img.shields.io/github/last-commit/falbany/cv-florent-albany)
+![A4 Ready](https://img.shields.io/badge/Layout-A4--Compatible-success)
+![Digital Ready](https://img.shields.io/badge/Layout-Digital--Showcase-blue)
 
-## Présentation
+Ce dépôt héberge l'architecture **Dual-CV** de **Florent Albany**, Ingénieur Docteur en Électronique. Le projet maintient deux versions synchronisées pour répondre à différents besoins professionnels.
 
-Ce dépôt contient le CV en ligne de **Florent Albany**, ingénieur docteur en électronique, spécialisé dans la caractérisation de transistors et la validation de composants numériques. Le CV est conçu pour être moderne, lisible et responsive, et peut être consulté directement via GitHub Pages.
+## 📄 Structures du Projet
 
-## Aperçu
+### 1. [CV Officiel A4 (cv-florent.html)](https://falbany.github.io/cv-florent-albany/cv-florent.html)
 
-- [Consulter le CV en ligne](https://falbany.github.io/cv-florent-albany/cv-florent.html)
+- **Objectif** : Candidatures officielles et impression.
+- **Contrainte** : Design strict optimisé pour tenir sur une seule page A4.
+- **Expérience Interactive** : Utilise des tooltips CSS pour révéler des détails techniques sans encombrer la mise en page papier.
 
-## Impression du CV
+### 2. [Digital Showcase (cv-florent-full.html)](https://falbany.github.io/cv-florent-albany/cv-florent-full.html)
 
-Pour imprimer le CV dans un format optimal :
+- **Objectif** : Portfolio numérique interactif.
+- **Design** : Ultra-moderne, mode sombre, animations avancées et glassmorphisme.
+- **Contenu** : Descriptions techniques exhaustives (Ph.D detail, GaN reliability, CMOS pixel design).
 
-1. Ouvrez le CV en ligne dans votre navigateur :  
-   [https://falbany.github.io/cv-florent-albany/cv-florent.html](https://falbany.github.io/cv-florent-albany/cv-florent.html)
-2. Utilisez la fonction d'impression du navigateur (`Ctrl+P` ou `Cmd+P`).
-3. Sélectionnez le format **A4** et vérifiez que les marges sont réglées sur "aucune" ou "minimales".
-4. Désactivez l'impression des en-têtes et pieds de page du navigateur pour un rendu plus professionnel.
-5. Le style du CV est optimisé pour l'impression : couleurs adaptées, marges supprimées, et éléments non essentiels masqués.
+## 🛠️ Technologies
 
-## Structure du projet
+- **HTML5 & CSS3** : Vanilla CSS pour une performance maximale.
+- **FontAwesome** : Iconographie professionnelle.
+- **Architecture Dual-Style** : `style.css` gère dynamiquement les thèmes (Light Print vs Dark Digital).
 
-```
-cv-florent-albany/
-├── cv-florent.html
-├── style.css
-├── img/
-│   └── Photo Profil.jpeg
-│   └── logo-serma.png
-│   └── logo-ims.png
-│   └── logo-cea.png
-└── README.md
-```
+## 🖨️ Guide d'Impression (A4)
 
-## Contact
+Pour un rendu PDF impeccable :
 
-Pour toute question ou suggestion, vous pouvez contacter Florent Albany via [LinkedIn](https://www.linkedin.com/in/falbany) ou par email : florent441@gmail.com.
+1. Ouvrez `cv-florent.html`.
+2. `Ctrl+P` / `Cmd+P`.
+3. Marges : **Aucune**.
+4. Graphiques d'arrière-plan : **Activés**.
+
+## 📞 Contact
+
+- **LinkedIn** : [linkedin.com/in/falbany](https://www.linkedin.com/in/falbany)
+- **GitHub** : [github.com/falbany](https://github.com/falbany)
+- **Email** : <florent441@gmail.com>
 
 ---
 

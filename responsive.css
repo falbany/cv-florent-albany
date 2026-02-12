@@ -1,0 +1,80 @@
+/* Modern Responsive Styles - restricted to screen only to prevent print leakage */
+
+@media screen and (max-width: 1024px) {
+    .cv-container {
+        grid-template-columns: 280px 1fr;
+        width: 95%;
+        margin: 1rem auto;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .cv-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .profile-section {
+        flex: 1 1 100%;
+    }
+
+    .sidebar section {
+        flex: 1 1 250px;
+    }
+
+    .main-content {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        padding: 1.5rem;
+    }
+
+    .sidebar section {
+        flex: 1 1 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    .main-content {
+        padding: 1.5rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .job-header .date {
+        align-self: flex-start;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
