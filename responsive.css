@@ -1,63 +1,80 @@
-/* Responsive Styles */
+/* Modern Responsive Styles - restricted to screen only to prevent print leakage */
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .cv-container {
-        width: 90%;
-        min-height: 0;
+        grid-template-columns: 280px 1fr;
+        width: 95%;
+        margin: 1rem auto;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 850px) {
     .cv-container {
-        flex-direction: column;
-        width: 100%;
-        margin: 0;
-        box-shadow: none;
-    }
-
-    .sidebar, .main-content {
-        width: 100%;
-        padding: 1.5rem;
+        grid-template-columns: 1fr;
     }
 
     .sidebar {
-        padding-bottom: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 2rem;
+        gap: 2rem;
     }
 
-    .profile-img {
-        width: 120px;
-        height: 120px;
+    .profile-section {
+        flex: 1 1 100%;
+    }
+
+    .sidebar section {
+        flex: 1 1 250px;
+    }
+
+    .main-content {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        padding: 1.5rem;
+    }
+
+    .sidebar section {
+        flex: 1 1 100%;
     }
 
     header h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     header h2 {
         font-size: 1.1rem;
     }
 
-    section h3 {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 13px;
-    }
-
-    .sidebar, .main-content {
-        padding: 1rem;
+    .main-content {
+        padding: 1.5rem;
     }
 
     .job-header {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 0.5rem;
     }
 
     .job-header .date {
-        margin-left: 0;
-        margin-top: 0.3rem;
+        align-self: flex-start;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
     }
 }
