@@ -23,8 +23,8 @@ body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
-    line-height: 1.6;
-    font-size: 15px;
+    line-height: 1.3;
+    font-size: 13px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -32,7 +32,7 @@ body {
     display: grid;
     grid-template-columns: 320px 1fr;
     max-width: 1000px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     background: #fff;
     box-shadow: var(--shadow);
     min-height: 29.7cm;
@@ -47,7 +47,7 @@ body {
     padding: 2.5rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.8rem;
 }
 
 .profile-section {
@@ -139,16 +139,16 @@ body {
 
 /* Main Content Styles */
 .main-content {
-    padding: 3rem;
+    padding: 1rem 1.5rem;
     background: linear-gradient(135deg, #fff 0%, #f1f5f9 100%);
 }
 
 header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: var(--secondary-color);
     letter-spacing: -0.02em;
@@ -162,15 +162,51 @@ header h2 {
     margin-top: 0.5rem;
 }
 
+.qr-code-section {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.qr-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.qr-link:hover {
+    transform: scale(1.05);
+}
+
+.qr-container {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 0.2rem;
+}
+
+.qr-container img {
+    width: 80px;
+    height: 80px;
+}
+
+.qr-container p {
+    font-size: 0.65rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+    line-height: 1.2;
+}
+
+
 section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 section h3 {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -230,10 +266,15 @@ section h3::after {
 /* Timeline/Job Styles */
 .job, .education-item {
     position: relative;
-    padding-left: 1.8rem;
-    margin-bottom: 1.8rem;
-    border-left: none; /* Removed container border for surgical line control */
-    transition: all 0.3s ease;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: none;
+}
+
+.education-item.compact {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
 }
 
 .job:hover, .education-item:hover {
@@ -247,7 +288,7 @@ section h3::after {
     position: absolute;
     left: -2px; /* Centered relative to the 2px border width */
     top: 11px;  /* Starts exactly at the center of the 12px dot */
-    bottom: -1.8rem; /* Extends through the margin-bottom to connect to the next dot */
+    bottom: -0.6rem; /* Extends through the margin-bottom to connect to the next dot */
     width: 2px;
     background: #e2e8f0;
     z-index: 1;
@@ -405,6 +446,7 @@ section h3::after {
     font-size: 1rem;
     font-weight: 700;
     color: var(--secondary-color);
+    margin-bottom: 0.2rem;
 }
 
 .job-header .date {
@@ -747,10 +789,10 @@ section h3::after {
     }
 
     .profile-img {
-        width: 100px; /* Balanced size */
-        height: 100px;
-        margin-bottom: 0.5rem;
-        border: 3px solid var(--primary-light);
+        width: 160px; /* Balanced size */
+        height: 160px;
+        margin-bottom: 1rem;
+        border: 4px solid var(--primary-light);
     }
 
     .main-content {
@@ -777,7 +819,7 @@ section h3::after {
     }
 
     section {
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.2rem;
         break-inside: avoid;
     }
 
@@ -854,5 +896,52 @@ section h3::after {
         opacity: 0.8;
         border-top: 1px solid #e2e8f0;
         padding-top: 0.5rem;
+    }
+}
+
+/* Dark Theme for A4 (Screen only) */
+@media screen {
+    body.dark-theme {
+        background-color: #0f172a;
+        color: #e2e8f0;
+    }
+
+    body.dark-theme .cv-container {
+        background: #1e293b;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-theme .main-content {
+        background: #1e293b;
+    }
+
+    body.dark-theme h1, body.dark-theme h3 {
+        color: #f8fafc;
+    }
+
+    body.dark-theme .about-text {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #cbd5e1;
+    }
+
+    body.dark-theme .job-company strong {
+        color: #f8fafc;
+    }
+    
+    body.dark-theme .experience-context {
+        background: rgba(0, 0, 0, 0.2);
+        color: #94a3b8;
+    }
+
+    body.dark-theme .qr-container {
+        background: #f8fafc; /* Keep QR background light for contrast */
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    body.dark-theme .qr-container img {
+        display: block;
+        margin: 0 auto;
     }
 }
