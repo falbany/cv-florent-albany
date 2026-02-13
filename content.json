@@ -1,0 +1,161 @@
+{
+    "contact": {
+        "name": "Florent ALBANY",
+        "title": "Ingénieur - Chercheur Test Électronique",
+        "email": "florent441@gmail.com",
+        "phone": "+33 6 72 48 88 19",
+        "location": "33600 Pessac - Nouvelle-Aquitaine",
+        "location_url": "https://maps.app.goo.gl/TGmf32qj94jMnVE8A",
+        "linkedin": "linkedin.com/in/falbany",
+        "github": "github.com/falbany"
+    },
+    "about": {
+        "short": "Ingénieur docteur en électronique, spécialisé en caractérisation de transistors et validation de composants numériques complexes. Expert en testeurs ATE, automatisation (Python, C++) et technologies GaN/SiGe. Conception de cartes électroniques et analyse de fiabilité.",
+        "full": [
+            "Ingénieur docteur en électronique, passionné par les nouvelles technologies et expert en test de produits numériques. J'apporte une solide expertise acquise notamment chez SERMA Technologies et au laboratoire IMS. Spécialisé dans la caractérisation de transistors et la validation de composants numériques complexes, je maîtrise les testeurs numériques (ATE) ainsi que l'automatisation de bancs de test (Python, C++, VBA, IC-CAP).",
+            "Ma connaissance approfondie des technologies HEMT GaN, HBT SiGe et MOSFET Si, couplée à mes compétences en conception de cartes électroniques (Altium Designer, KiCad) et ma capacité à évaluer la fiabilité et la robustesse des produits, me permettent d'apporter des solutions complètes et innovantes pour les défis complexes de qualification électronique."
+        ]
+    },
+    "skills": {
+        "techniques": [
+            "Caractérisation de transistors",
+            "HEMT GaN",
+            "HBT SiGe",
+            "MOSFET Si",
+            "Test de composants complexes",
+            "Qualification",
+            "Gestion de projet",
+            "Conception PCB (Altium, KiCad)",
+            "Testeurs numériques (ATE, MuTest)",
+            "Développement de logiciels et d'API"
+        ],
+        "programmation": [
+            "Python",
+            "C/C++",
+            "VBA",
+            "IC-CAP"
+        ],
+        "cao_simulation": [
+            "Altium Designer",
+            "KiCad",
+            "ADS",
+            "CADENCE"
+        ]
+    },
+    "experiences": [
+        {
+            "company": "SERMA Technologies",
+            "url": "https://www.serma-technologies.com/",
+            "logo": "img/logo-serma.png",
+            "description": "Spécialisée dans la maîtrise des technologies de l’électronique, SERMA Technologies accompagne ses clients dans les phases de R&D, d’ingénierie, de fabrication et de maintenance.",
+            "roles": [
+                {
+                    "title": "Ingénieur Test Électronique Numérique",
+                    "date": "mai 2024 – Présent",
+                    "bullet_points": ["Test et qualification de composants numériques complexes."],
+                    "tooltip": "Test et qualification de composants numériques complexes sur testeurs ATE."
+                },
+                {
+                    "title": "Ingénieur modélisation",
+                    "date": "sept. 2022 – mai 2024",
+                    "bullet_points": [
+                        "Caractérisation de transistors en milieu durci.",
+                        "Caractérisation de transistors en milieu durci et modélisation physique.",
+                        "Utilisation experte de l'environnement IC-CAP pour la modélisation et l'extraction de paramètres.",
+                        "Analyse de la robustesse des composants sous contraintes environnementales sévères."
+                    ],
+                    "bullet_points_a4": [
+                        "Caractérisation et modélisation de transistors en milieu durci.",
+                        "Analyse de robustesse sous contraintes environnementales sévères."
+                    ],
+                    "tooltip": "Expertise en modélisation physique et extraction de paramètres sous contraintes sévères."
+                }
+            ]
+        },
+        {
+            "company": "IMS Laboratory",
+            "url": "https://www.ims-bordeaux.fr/",
+            "logo": "img/logo-ims.png",
+            "description": "Laboratoire de recherche reconnu internationalement, spécialisé en électronique et systèmes, au cœur de forts partenariats industriels.",
+            "roles": [
+                {
+                    "title": "Chercheur postdoctoral",
+                    "date": "jan. 2022 – sept. 2022",
+                    "bullet_points": ["Évaluation de la linéarité RF de transistors HBT SiGe."],
+                    "bullet_points_a4": ["Analyse de la linéarité RF de transistors HBT SiGe en forte puissance."],
+                    "full_points": [
+                        "Évaluation de l'influence de la puissance RF sur la linéarité des transistors bipolaires HBT SiGe.",
+                        "Mise en œuvre de mesures de paramètres S complexes et analyse de la distorsion en régime de forte puissance.",
+                        "Caractérisation statique et dynamique pour l'optimisation des performances RF."
+                    ],
+                    "tooltip": "Évaluation de l'influence de la puissance RF sur la linéarité des transistors bipolaires HBT SiGe. Mise en œuvre de mesures de paramètres S complexes et analyse de la distorsion en régime de forte puissance. Caractérisation statique et dynamique pour l'optimisation des performances RF."
+                },
+                {
+                    "title": "Doctorant",
+                    "date": "déc. 2017 – déc. 2021",
+                    "context": "Travaux de thèse au laboratoire IMS (Université de Bordeaux) dans le cadre de l’ANR ED-GaN (Partenariat OMMIC, IEMN, CRHEA).",
+                    "short_context": "Analyse de la robustesse des HEMTs GaN normally-off par approches gate recess, barrier etching et implantation de fluorures.",
+                    "bullet_points": ["Fiabilité et robustesse de transistors HEMTs GaN normally-off."],
+                    "bullet_points_a4": ["Étude de fiabilité et robustesse de transistors HEMTs GaN normally-off."],
+                    "tooltip": "Évaluation de la robustesse des HEMTs GaN normally-off (E-mode) pour la co-intégration avec le mode normally-on (D-mode). Étude comparative de diverses approches technologiques : gate recess, barrier etching et implantation d’ions fluorures. Développement de méthodes de caractérisation DC spécifiques et de tests de vieillissement accéléré."
+                }
+            ]
+        },
+        {
+            "company": "CEA Tech",
+            "url": "https://www.cea-tech.fr/cea-tech/Pages/accueil.aspx",
+            "logo": "img/logo-cea.png",
+            "description": "Pôle de recherche technologique du CEA, innovant pour l'industrie dans les phases de R&D et d'ingénierie avancée.",
+            "roles": [
+                {
+                    "title": "Stage de fin d’études",
+                    "date": "mars 2017 – sept. 2017",
+                    "bullet_points": ["Conception de pixels infrarouges CMOS à hautes performances."],
+                    "bullet_points_a4": ["Conception de pixels infrarouges CMOS à hautes performances intégrants des capacités CDTI."],
+                    "full_points": [
+                        "Conception de pixels infrarouges CMOS à hautes performances.",
+                        "Évaluation d'un nouveau type de stockage : la capacité tridimensionnelle CDTI (Capacitive Deep Trench Isolation) intégrée au semi-conducteur.",
+                        "Analyse de la gravure de tranchées profondes et du remplissage par un conducteur polysilicium isolé par oxyde, permettant un stockage de charges supérieur aux solutions conventionnelles."
+                    ],
+                    "tooltip": "Conception de pixels infrarouges CMOS à hautes performances. Évaluation d'un nouveau type de stockage : la capacité tridimensionnelle CDTI (Capacitive Deep Trench Isolation) intégrée au semi-conducteur. Analyse de la gravure de tranchées profondes et du remplissage par un conducteur polysilicium isolé par oxyde."
+                }
+            ]
+        }
+    ],
+    "formation": [
+        {
+            "title": "Doctorat en électronique",
+            "institution": "Laboratoire IMS - Université de Bordeaux",
+            "date": "2017 – 2021",
+            "icon": "fas fa-graduation-cap"
+        },
+        {
+            "title": "Master 2 Ingénierie électrique",
+            "institution": "Université de Bordeaux",
+            "date": "2016 – 2017",
+            "icon": "fas fa-graduation-cap"
+        },
+        {
+            "title": "Licence EEA",
+            "institution": "Université de Bordeaux",
+            "date": "2012 – 2015",
+            "icon": "fas fa-university"
+        }
+    ],
+    "publications": [
+        {
+            "title": "Robustesse des transistors HEMT GaN normally-off (Thèse)",
+            "url": "https://theses.hal.science/tel-03572025",
+            "icon": "fas fa-file-pdf"
+        },
+        {
+            "title": "Co-intégration de transistors GaN pour circuits RF avancés",
+            "icon": "fas fa-scroll"
+        },
+        {
+            "title": "Stabilité de la tension de seuil dans les HEMT GaN",
+            "url": "https://www.researchgate.net/publication/355276595_Stability_of_the_threshold_voltage_in_fluorine-implanted_normally-off_AlNGaN_HEMTs_co-integrated_with_commercial_normally-on_GaN_HEMT_technology",
+            "icon": "fas fa-link"
+        }
+    ]
+}
