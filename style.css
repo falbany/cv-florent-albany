@@ -70,6 +70,8 @@ body {
   object-fit: cover;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .profile-img:hover {
@@ -104,6 +106,10 @@ body {
 
 .contact-info a:hover {
   color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--primary-light);
 }
 
 .skills-list > li {
@@ -159,6 +165,7 @@ body {
 }
 
 header {
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -170,7 +177,7 @@ header {
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 26pt;
   font-weight: 800;
   color: var(--secondary-color);
   letter-spacing: -0.02em;
@@ -178,7 +185,7 @@ header h1 {
 }
 
 header h2 {
-  font-size: 1.4rem;
+  font-size: 14pt;
   font-weight: 500;
   color: var(--primary-color);
   margin-top: 0.5rem;
@@ -957,7 +964,7 @@ section h3::after {
   .profile-img {
     width: 160px; /* Balanced size */
     height: 160px;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     border: 4px solid var(--primary-light);
   }
@@ -969,6 +976,7 @@ section h3::after {
   }
 
   header {
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 2px solid #edf2f7;
     padding-bottom: 0.5rem;
@@ -982,7 +990,7 @@ section h3::after {
   }
 
   header h1 {
-    font-size: 2.6rem;
+    font-size: 26pt;
     margin-bottom: 0.2rem;
     letter-spacing: -0.01em;
   }
