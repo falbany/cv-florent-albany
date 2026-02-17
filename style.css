@@ -879,7 +879,10 @@ section h3::after {
         padding: 0;
         box-shadow: none;
         border-radius: 0;
-        min-height: 0; 
+        border-radius: 0;
+        min-height: auto;
+        height: auto;
+        overflow: visible;
     }
 
     .sidebar {
@@ -934,6 +937,7 @@ section h3::after {
     .main-content {
         padding: 1.2rem 1.8rem;
         background: #fff;
+        color: #000 !important;
     }
 
     header {
@@ -963,7 +967,7 @@ section h3::after {
 
     section {
         margin-bottom: 0.2rem;
-        break-inside: avoid;
+        break-inside: auto; /* Allow sections to split across pages */
     }
 
     section h3 {
@@ -980,12 +984,22 @@ section h3::after {
     }
 
     .about-text {
-        padding: 1rem;
-        font-size: 0.8rem;
-        border: 1.5px solid #edf2f7;
-        line-height: 1.4;
-        background: transparent;    
-        text-align: justify;
+        display: block !important;
+        padding: 0 !important;
+        margin-bottom: 1rem !important;
+        font-size: 9pt !important;
+        border: none !important;
+        background: transparent !important;
+        color: #000 !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+
+    .about-text p {
+        color: #000 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     .job, .education-item, .education-item.compact {
@@ -994,7 +1008,7 @@ section h3::after {
         border: 1px solid var(--border-light);
         break-inside: avoid;
         box-shadow: none;
-        background: transparent; /* Ensure white background */
+        background: #fff; /* Ensure white background for contrast */
     }
 
     /* Target the specific education compact items */
