@@ -82,30 +82,57 @@ function hydrateExperiences(experiences, isFull) {
     const container = document.getElementById('experience-list');
     if (!container) return;
 
-    container.innerHTML = experiences.map(exp => `
-        <div class="job">
-            <div class="job-company">
-                <a href="${exp.url}" target="_blank" rel="noopener noreferrer" class="company-link" data-tooltip="${exp.description}">
-                    <img src="${exp.logo}" alt="${exp.company}">
-                    <strong>${exp.company}</strong>
-                </a>
-            </div>
-            ${exp.roles.map((role, idx) => `
-                <div class="job-header" style="${idx > 0 ? 'margin-top: 1rem;' : ''}">
-                    <h4 class="${!isFull && role.tooltip ? 'tooltip' : ''}" data-tooltip="${role.tooltip || ''}">
-                        ${role.title} <span class="date">${role.date}</span>
-                    </h4>
+    container.innerHTML = experiences.map(exp => {
+        // Check if there's only one role to decide layout
+        const isSingleRole = exp.roles.length === 1;
+
+        if (isSingleRole) {
+            const role = exp.roles[0];
+            return `
+            <div class="job single-role">
+                <div class="job-header-inline">
+                    <div class="company-role-group">
+                        <a href="${exp.url}" target="_blank" rel="noopener noreferrer" class="company-link" data-tooltip="${exp.description}">
+                            <img src="${exp.logo}" alt="${exp.company}">
+                            <strong>${exp.company}</strong>
+                        </a>
+                        <span class="separator">|</span>
+                        <span class="role-title ${!isFull && role.tooltip ? 'tooltip' : ''}" data-tooltip="${role.tooltip || ''}">${role.title}</span>
+                    </div>
+                    <span class="date">${role.date}</span>
                 </div>
-                ${!isFull && role.short_context ? `<div class="experience-context">${role.short_context}</div>` : ''}
-                ${isFull && role.context ? `<div class="experience-context">${role.context}</div>` : ''}
                 <ul>
                     ${(isFull && role.full_points ? role.full_points : (isFull ? role.bullet_points : (role.bullet_points_a4 || role.bullet_points))).map(bp => `
                         <li class="${!isFull && role.tooltip ? 'tooltip' : ''}" data-tooltip="${role.tooltip || ''}">${bp}</li>
                     `).join('')}
                 </ul>
-            `).join('')}
-        </div>
-    `).join('');
+            </div>`;
+        } else {
+            return `
+            <div class="job">
+                <div class="job-company">
+                    <a href="${exp.url}" target="_blank" rel="noopener noreferrer" class="company-link" data-tooltip="${exp.description}">
+                        <img src="${exp.logo}" alt="${exp.company}">
+                        <strong>${exp.company}</strong>
+                    </a>
+                </div>
+                ${exp.roles.map((role, idx) => `
+                    <div class="job-header" style="${idx > 0 ? 'margin-top: 1rem;' : ''}">
+                        <h4 class="${!isFull && role.tooltip ? 'tooltip' : ''}" data-tooltip="${role.tooltip || ''}">
+                            ${role.title} <span class="date">${role.date}</span>
+                        </h4>
+                    </div>
+                    ${!isFull && role.short_context ? `<div class="experience-context">${role.short_context}</div>` : ''}
+                    ${isFull && role.context ? `<div class="experience-context">${role.context}</div>` : ''}
+                    <ul>
+                        ${(isFull && role.full_points ? role.full_points : (isFull ? role.bullet_points : (role.bullet_points_a4 || role.bullet_points))).map(bp => `
+                            <li class="${!isFull && role.tooltip ? 'tooltip' : ''}" data-tooltip="${role.tooltip || ''}">${bp}</li>
+                        `).join('')}
+                    </ul>
+                `).join('')}
+            </div>`;
+        }
+    }).join('');
 }
 
 function hydrateFormation(formation, isFull) {
@@ -128,7 +155,10 @@ function hydratePublications(publications) {
 
     container.innerHTML = publications.map(pub => `
         <li>
-            ${pub.url ? `<a href="${pub.url}" target="_blank"><i class="${pub.icon}"></i> ${pub.title}</a>` : `<i class="${pub.icon}"></i> ${pub.title}`}
+            ${pub.url ? 
+                `<a href="${pub.url}" target="_blank" class="publication-link tooltip" data-tooltip="${pub.tooltip || ''}"><i class="${pub.icon}"></i> ${pub.title}</a>` : 
+                `<span class="publication-link tooltip" data-tooltip="${pub.tooltip || ''}"><i class="${pub.icon}"></i> ${pub.title}</span>`
+            }
         </li>
     `).join('');
 }
