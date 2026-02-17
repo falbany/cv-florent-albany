@@ -9,8 +9,10 @@
     --sidebar-bg: #1e293b;
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(255, 255, 255, 0.2);
-    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Softer, deeper shadow */
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e1;
 }
 
 * {
@@ -23,7 +25,7 @@ body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
-    line-height: 1.3;
+    line-height: 1.5; /* Improved readability */
     font-size: 13px;
     -webkit-font-smoothing: antialiased;
 }
@@ -119,7 +121,14 @@ body {
     padding: 0.3rem 0.6rem;
     border-radius: 6px;
     font-size: 0.85rem;
-    color: #e2e8f0;
+    color: var(--border-light);
+    transition: all 0.2s ease;
+}
+
+.skills-list ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    cursor: default;
 }
 
 .publications-list li {
@@ -145,6 +154,13 @@ body {
 
 header {
     margin-bottom: 0.5rem;
+}
+
+.header-specialties {
+    color: var(--text-muted);
+    font-size: 11pt;
+    margin-top: 0.3rem;
+    font-weight: 500;
 }
 
 header h1 {
@@ -199,17 +215,24 @@ header h2 {
 
 
 section {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem; /* Reduced from 1.2rem */
+    break-inside: avoid;
 }
 
 section h3 {
-    font-size: 1rem;
+    font-size: 1.15rem; /* Coherent size */
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 0.5rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    border-bottom: 2px solid #f1f5f9; /* Lighter, thicker underline */
+    padding-bottom: 0.5rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding-left: 0.5rem; /* Space for accent */
 }
 
 section h3::after {
@@ -228,7 +251,7 @@ section h3::after {
 
 .about-text {
     background: var(--glass-bg);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(4px);
     border: 1px solid var(--glass-border);
     padding: 1.5rem;
     border-radius: 12px;
@@ -266,33 +289,32 @@ section h3::after {
 /* Timeline/Job Styles */
 .job, .education-item {
     position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    border-left: none;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem; /* Compact aerial vertical spacing */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03); /* Lighter 'aerial' shadow */
+    transition: all 0.3s ease;
+    page-break-inside: avoid;
 }
 
 .education-item.compact {
     background: transparent;
-    padding: 0;
+    padding: 0.5rem 0 0.5rem 1.2rem;
     box-shadow: none;
+    margin-bottom: 0.5rem;
 }
 
 .job:hover, .education-item:hover {
-    padding-left: 2rem;
-    background: rgba(37, 99, 235, 0.02);
+    transform: none; /* No movement to keep it professional/static */
+    border-left-color: var(--primary-color); /* Highlight on hover */
+    background: transparent;
 }
 
-/* Surgical Vertical Line */
+/* Remove old timeline lines as we are moving to discrete boxes */
 .job::after, .education-item::after {
-    content: '';
-    position: absolute;
-    left: -2px; /* Centered relative to the 2px border width */
-    top: 11px;  /* Starts exactly at the center of the 12px dot */
-    bottom: -0.6rem; /* Extends through the margin-bottom to connect to the next dot */
-    width: 2px;
-    background: #e2e8f0;
-    z-index: 1;
-    transition: all 0.3s ease;
+    display: none;
 }
 
 .job:last-child::after, .education-item:last-child::after {
@@ -309,12 +331,12 @@ section h3::after {
 .job::before, .education-item::before {
     content: '';
     position: absolute;
-    left: -7px;
-    top: 5px;
+    left: -8px;
+    top: -0.2rem;
     width: 12px;
     height: 12px;
     background: #fff;
-    border: 2px solid #cbd5e1;
+    border: 2px solid var(--border-medium);
     border-radius: 50%;
     z-index: 10;
     transition: all 0.3s ease;
@@ -335,6 +357,10 @@ section h3::after {
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 0.4rem;
+}
+
+.job-company strong {
+    font-size: 0.95rem;
 }
 
 .experience-context {
@@ -402,6 +428,20 @@ section h3::after {
     transform: translateX(-50%) translateY(0);
 }
 
+/* Sidebar specific tooltip adjustment */
+.sidebar [data-tooltip]::after {
+    left: 100%;
+    bottom: auto;
+    top: 50%;
+    transform: translateX(10px) translateY(-50%);
+    width: 300px; /* Slightly narrower to fit screen */
+    text-align: left;
+}
+
+.sidebar [data-tooltip]:hover::after {
+    transform: translateX(15px) translateY(-50%);
+}
+
 .company-link {
     display: flex;
     align-items: center;
@@ -419,23 +459,40 @@ section h3::after {
 
 .company-link strong {
     color: var(--secondary-color);
-    border-bottom: 1px dashed transparent;
-    transition: border-color 0.3s ease;
+    position: relative;
+}
+
+.company-link strong::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--primary-light);
+    transition: width 0.3s ease;
+}
+
+.company-link:hover strong::after {
+    width: 100%;
 }
 
 .company-link:hover strong {
-    border-bottom-color: var(--primary-light);
+    border-bottom: none; /* Remove old border */
 }
 
 .company-link img {
     height: 24px;
     width: auto;
     filter: grayscale(0.2);
-    transition: filter 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0.7;
 }
 
 .company-link:hover img {
     filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .job-header {
@@ -449,14 +506,80 @@ section h3::after {
     margin-bottom: 0.2rem;
 }
 
+/* Single Role Inline Styles - Specificity Boost */
+.job.single-role .job-header-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+.company-role-group {
+    display: inline-flex; /* Changed to inline-flex */
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap; /* Force single line */
+    flex: 1;
+    min-width: 0; /* Allow flex shrinking */
+    overflow: hidden; /* Handle overflow if needed */
+    text-overflow: ellipsis;
+}
+
+.company-role-group strong {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* Ensure company link behaves as flex item */
+.job.single-role .company-link {
+    display: inline-flex;
+    margin-bottom: 0;
+    margin-left: -0.5rem;
+}
+
+.job.single-role .separator {
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin: 0 0.2rem;
+}
+
+.job.single-role .role-title {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.job.single-role .date {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: #f1f5f9;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+/* Standard Header Date */
 .job-header .date {
     display: inline-block;
-    background: #e2e8f0;
+    background: transparent; /* Remove heavy background */
+    border: 1px solid var(--border-light); /* Subtle border */
     padding: 0.1rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    border-radius: 4px; /* Less rounded, matches jobs */
+    font-size: 0.75rem; /* Slightly smaller */
+    font-weight: 500;
     color: var(--text-muted);
+    letter-spacing: 0.02em;
 }
 
 .job ul {
@@ -478,17 +601,27 @@ section h3::after {
 
 .education-item {
     display: flex;
-    gap: 1rem;
-    padding: 0;
-    border: none;
+    flex-direction: column; /* Stack children vertically */
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
 }
 
+.education-item.compact {
+    padding: 0.6rem 0.8rem;
+    gap: 0.2rem;
+}
+
+/* Remove old wrapper styles causing conflict */
 .education-item .education-content {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-    flex: 1;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
 }
 
 .actions {
@@ -726,9 +859,11 @@ section h3::after {
 
     body {
         background: #fff;
-        font-size: 9.5pt; /* Robust professional font size */
+        font-size: 9pt; /* Robust professional font size */
         color: var(--text-main);
         line-height: 1.35; /* Elegant readability */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .no-print {
@@ -754,7 +889,7 @@ section h3::after {
     }
 
     .sidebar h3 {
-        font-size: 0.95rem;
+        font-size: 10pt;
         color: var(--primary-light);
         border-bottom: 2px solid rgba(255, 255, 255, 0.15);
         margin-top: 0.6rem;
@@ -763,17 +898,17 @@ section h3::after {
     }
 
     .contact-info li {
-        margin-bottom: 0.3rem;
-        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+        font-size: 9pt;
     }
 
     .sidebar .skills-list > li {
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.4rem;
     }
 
     .sidebar .skills-list ul li {
         padding: 0.15rem 0.4rem;
-        font-size: 0.72rem;
+        font-size: 9pt;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -784,13 +919,14 @@ section h3::after {
 
     .publications-list li {
         margin-bottom: 0.4rem !important;
-        font-size: 0.78rem;
+        font-size: 9pt;
         line-height: 1.25;
     }
 
     .profile-img {
         width: 160px; /* Balanced size */
         height: 160px;
+        margin-top: 1.5rem;
         margin-bottom: 1rem;
         border: 4px solid var(--primary-light);
     }
@@ -806,6 +942,13 @@ section h3::after {
         padding-bottom: 0.5rem;
     }
 
+    .header-specialties {
+        color: var(--text-muted);
+        font-size: 10pt;
+        margin-top: 0.3rem;
+        font-weight: 500;
+    }
+    
     header h1 {
         font-size: 2.6rem;
         margin-bottom: 0.2rem;
@@ -825,6 +968,7 @@ section h3::after {
 
     section h3 {
         font-size: 1.2rem;
+        margin-top: 0.6rem;
         margin-bottom: 0.8rem;
         border-bottom: 1.5px solid #edf2f7;
         padding-bottom: 0.2rem;
@@ -832,54 +976,67 @@ section h3::after {
     }
 
     section h3::after {
-        background: var(--primary-light) !important;
+        background: linear-gradient(to right, var(--primary-light), transparent);
     }
 
     .about-text {
         padding: 1rem;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         border: 1.5px solid #edf2f7;
         line-height: 1.4;
-        background: transparent;
+        background: transparent;    
         text-align: justify;
     }
 
-    .job, .education-item {
-        margin-bottom: 0.5rem;
-        padding-left: 1.4rem;
-        border-left: 2px solid #e2e8f0;
+    .job, .education-item, .education-item.compact {
+        margin-bottom: 0.4rem;
+        padding: 0.5rem 0.8rem; /* Tighter padding for print */
+        border: 1px solid var(--border-light);
         break-inside: avoid;
+        box-shadow: none;
+        background: transparent; /* Ensure white background */
+    }
+
+    /* Target the specific education compact items */
+    .education-item.compact {
+        display: block; /* Ensure stacking */
+        border: 1px solid var(--border-light); /* Distinctive simple border */
+        padding-left: 0.8rem;
+        border-radius: 0;
     }
 
     .job-company {
-        margin-bottom: 0.2rem;
-        font-size: 1rem;
+        margin-bottom: 0.1rem;
+        font-size: 0.9rem;
     }
 
     .job-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.2rem;
-        width: 100%;
+        margin-bottom: 0.1rem;
     }
 
     .job-header h4 {
         margin: 0;
         font-size: 0.85rem;
         font-weight: 700;
-        flex: 1;
     }
 
     .job-header .date {
-        font-size: 0.8rem;
-        background: #f7fafc !important;
-        border: 1px solid #edf2f7;
-        padding: 0.1rem 0.5rem;
-        white-space: nowrap;
-        margin-left: 1rem;
-        flex-shrink: 0;
+        font-size: 0.75rem;
+        background: #f1f5f9 !important;
+        border: 1px solid #e2e8f0;
+        padding: 0 0.4rem;
+        height: auto;
+        line-height: 1.4;
     }
+
+    .job ul li {
+        margin-bottom: 0.2rem;
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    /* Remove interactive elements in print */
+    .actions { display: none !important; }
 
     .job ul li {
         margin-bottom: 0.3rem;
