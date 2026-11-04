@@ -166,6 +166,14 @@ body {
 .publications-list a:hover {
   text-decoration: underline;
 }
+/* Generic sidebar links (Atouts, etc.) — specific rules above take precedence */
+aside a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+aside a:hover {
+  text-decoration: underline;
+}
 /* Main Content Styles */
 .main-content {
   padding: 1rem 1.5rem;
